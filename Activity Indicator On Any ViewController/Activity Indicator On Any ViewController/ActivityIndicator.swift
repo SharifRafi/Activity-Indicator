@@ -24,6 +24,12 @@ extension UIViewController{
         activityIndicator.startAnimating()
         ActivityView?.addSubview(activityIndicator)
         self.view.addSubview(ActivityView!)
+        
+        //Auto remove call
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false){
+             (t) in
+            self.RemoveSpinner()
+        }
     }
     
     
